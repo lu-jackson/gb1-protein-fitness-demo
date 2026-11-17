@@ -1,0 +1,37 @@
+train n=  2000  mean=0.0787 median=0.0034 frac>1=0.0225 frac==0=0.203
+val   n=  2000  mean=0.0730 median=0.0033 frac>1=0.0230 frac==0=0.196
+test  n=  5000  mean=0.0752 median=0.0034 frac>1=0.0246 frac==0=0.201
+pool  n= 20000  mean=0.0762 median=0.0034 frac>1=0.0232 frac==0=0.197
+X shape (2000, 80)  each row sums to [4. 4. 4.] (one letter per position)
+train mean = 0.07869281 {'MAE': 0.13040705025196075, 'RMSE': 0.38065749406814575, 'Spearman': nan} (Spearman undefined: constant prediction)
+alpha=0.01    val {'MAE': 0.1688, 'RMSE': 0.3388, 'Spearman': 0.5026}
+alpha=0.1     val {'MAE': 0.1687, 'RMSE': 0.3388, 'Spearman': 0.5025}
+alpha=1       val {'MAE': 0.1677, 'RMSE': 0.3386, 'Spearman': 0.5022}
+alpha=10      val {'MAE': 0.1584, 'RMSE': 0.3376, 'Spearman': 0.4993}
+alpha=100     val {'MAE': 0.1199, 'RMSE': 0.3429, 'Spearman': 0.4847}
+alpha=1000    val {'MAE': 0.1238, 'RMSE': 0.3643, 'Spearman': 0.4679}
+chosen alpha: 0.01  test: {'MAE': 0.17189136147499084, 'RMSE': 0.34901589155197144, 'Spearman': 0.4988208856312202}
+seed 0: stopped at epoch 52, best val MSE 0.0553, test {'MAE': 0.0666, 'RMSE': 0.2307, 'Spearman': 0.4244}
+seed 1: stopped at epoch 49, best val MSE 0.0548, test {'MAE': 0.0648, 'RMSE': 0.2291, 'Spearman': 0.4106}
+seed 2: stopped at epoch 47, best val MSE 0.0587, test {'MAE': 0.0686, 'RMSE': 0.242, 'Spearman': 0.3917}
+                        MAE    RMSE  Spearman
+mean baseline        0.1304  0.3807       NaN
+one-hot Ridge        0.1719  0.3490    0.4988
+MLP (single seed 0)  0.0666  0.2307    0.4244
+MLP (3-seed mean)    0.0617  0.2297    0.4611
+Spearman(seed std, |error|) = 0.346
+median |error|: low-disagreement quartile = 0.0098, high-disagreement quartile = 0.0286
+mean seed-std on true fitness>1: 0.1472 vs others: 0.0200
+mean |error| on true fitness>1: 1.0114 vs others: 0.0378
+pool: n=20000, top-1% threshold = 2.028, pool mean fitness = 0.0762, expected random hits = 0.20
+                                mean_fitness  hits_top1pct
+Ridge top-20                          2.8535       13.0000
+MLP 3-seed top-20                     3.7258       19.0000
+Oracle top-20 (ceiling)               5.0623       20.0000
+Random 20 (mean of 5000 draws)        0.0741        0.1906
+random mean_fitness 5th-95th pct: 0.0047 - 0.2456; 95th pct hits: 1
+Ridge top-20: fraction of random draws with mean_fitness >= this strategy = 0.0000
+MLP 3-seed top-20: fraction of random draws with mean_fitness >= this strategy = 0.0000
+MLP picks (variant, predicted, true):
+YCCA(4.13/2.57), LWCG(3.82/5.52), IWCA(3.74/6.01), WVCA(3.61/4.03), YYCA(3.57/4.60), YKCA(3.55/3.76), WILA(3.53/4.02), YKAA(3.52/3.24), LILA(3.20/3.45), FNCA(3.19/3.75), LCFG(3.18/3.23), FVAA(3.12/4.03), YIFG(3.09/5.07), VNLG(3.08/4.65), LNLA(3.05/3.54), YVFA(3.03/2.57), LIGG(2.95/0.39), FILG(2.94/4.26), WMCA(2.92/2.31), LCLG(2.90/3.53)
+distinct amino acids per position among picks: [6, 8, 5, 2]

@@ -1,0 +1,6 @@
+# data are downloaded on demand from the public FLIP copy (see README)
+data/
+*.zip
+.venv/
+__pycache__/
+.ipynb_checkpoints/

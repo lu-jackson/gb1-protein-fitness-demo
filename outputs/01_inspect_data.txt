@@ -1,0 +1,57 @@
+shape: (149361, 5)
+Variants              str
+HD                  int64
+Count input         int64
+Count selected      int64
+Fitness           float64
+missing:
+ Variants          0
+HD                0
+Count input       0
+Count selected    0
+Fitness           0
+duplicate Variants: 0
+seq length set: [4]
+
+HD counts:
+ HD
+0         1
+1        76
+2      2091
+3     26019
+4    121174
+
+Fitness describe:
+ count    149361.000000
+mean          0.080510
+std           0.395391
+min           0.000000
+25%           0.001370
+50%           0.003384
+75%           0.008986
+max           8.761966
+
+Fitness quantiles:
+ 0.01    0.000000
+0.10    0.000000
+0.25    0.001370
+0.50    0.003384
+0.75    0.008986
+0.90    0.046406
+0.99    2.152372
+
+Fitness == 0: 29477  <0: 0  >1: 3643  >=0.5: 5822
+
+Count input describe:
+ count    149361.000000
+mean        582.209908
+std        1072.597317
+min          10.000000
+25%          93.000000
+50%         249.000000
+75%         624.000000
+max       92735.000000
+
+reference row:
+   Variants  HD  Count input  Count selected  Fitness
+0     VDGV   0        92735          338346      1.0
